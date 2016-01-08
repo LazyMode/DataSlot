@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>DataSlot</id>
+        <version>0.0.0</version>
+        <authors>Licshee</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>You want DataSlots on any object!</description>
+    </metadata>
+    <files>
+        <file src="DataSlot.dll" target="lib\DataSlot.dll" />
+    </files>
+</package>
