@@ -15,9 +15,17 @@ public static class DataSlotUtility
 
         return null;
     }
+    public static object GetOrAddSlotData<T>(this T target, object slot, object data)
+        where T : class
+        => MapOfDataSlotTables.GetOrCreateValue(target).GetOrAdd(slot, data);
+
     public static void SetSlotData<T>(this T target, object slot, object data)
         where T : class
         => MapOfDataSlotTables.GetOrCreateValue(target)[slot] = data;
+    public static bool TryAddSlotData<T>(this T target, object slot, object data)
+        where T : class
+        => MapOfDataSlotTables.GetOrCreateValue(target).TryAdd(slot, data);
+
     public static bool TryGetSlotData<T>(this T target, object slot, out object data)
         where T : class
     {
