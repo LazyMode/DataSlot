@@ -10,9 +10,10 @@ public static class DataSlotUtility
         where T : class
     {
         ConcurrentDictionary<object, object> table;
-        if (!MapOfDataSlotTables.TryGetValue(target, out table))
-            return null;
-        return table[slot];
+        if (MapOfDataSlotTables.TryGetValue(target, out table))
+            return table[slot];
+
+        return null;
     }
     public static void SetSlotData<T>(this T target, object slot, object data)
         where T : class
