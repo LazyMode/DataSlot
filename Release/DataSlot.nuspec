@@ -2,8 +2,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>DataSlot</id>
-        <version>0.0.0</version>
+        <version>0.0.1</version>
         <authors>Licshee</authors>
+        <projectUrl>https://github.com/NanaLich/DataSlot</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>You want DataSlots on any object!</description>
     </metadata>
