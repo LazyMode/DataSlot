@@ -2,13 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>DataSlot</id>
-        <version>0.0.2</version>
+        <version>0.0.3</version>
         <authors>Licshee</authors>
         <projectUrl>https://github.com/OmniKits/DataSlot</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>You want DataSlots on any object!</description>
     </metadata>
     <files>
-        <file src="DataSlot.dll" target="lib\DataSlot.dll" />
+        <file src="P5\DataSlot.dll" target="lib\portable-net4+win8\DataSlot.dll" />
+        <file src="P111\DataSlot.dll" target="lib\portable-dnxcore5+net45+win8+wpa\DataSlot.dll" />
     </files>
 </package>
