@@ -7,14 +7,14 @@ using System.Text;
 #if XAMARIN_FORMS
 using BindableObject = Xamarin.Forms.BindableObject;
 using BindableProperty = Xamarin.Forms.BindableProperty;
+using BindablePropertyKey = Xamarin.Forms.BindablePropertyKey;
 #elif NETFX_CORE
-using FE = Windows.UI.Xaml.FrameworkElement;
 using BindableObject = Windows.UI.Xaml.DependencyObject;
 using BindableProperty = Windows.UI.Xaml.DependencyProperty;
 #else
-using FE = System.Windows.FrameworkElement;
 using BindableObject = System.Windows.DependencyObject;
 using BindableProperty = System.Windows.DependencyProperty;
+using BindablePropertyKey = System.Windows.DependencyPropertyKey;
 #endif
 
 using static Types;
@@ -47,11 +47,26 @@ static class BindableHelpers<T>
 #else
         var info = slot.GetType().GetTypeInfo();
 #endif
-        return IsBindableObject && BindablePropertyType.IsAssignableFrom(info);
+
+        if (BindablePropertyType.IsAssignableFrom(info))
+            return true;
+
+#if NETFX_CORE
+        return false;
+#else
+        return BindablePropertyKeyType.IsAssignableFrom(info);
+#endif
     }
 
     public static void SetSlotData(T target, object slot, object data)
-        => (target as BindableObject).SetValue((BindableProperty)slot, data);
+    {
+#if !NETFX_CORE
+        var key = slot as BindablePropertyKey;
+        if (key != null)
+            (target as BindableObject).SetValue((BindablePropertyKey)slot, data);
+#endif
+        (target as BindableObject).SetValue((BindableProperty)slot, data);
+    }
     public static object GetSlotData(T target, object slot)
         => (target as BindableObject).GetValue((BindableProperty)slot);
 
