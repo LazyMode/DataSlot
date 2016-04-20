@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>DataSlot</id>
+        <version>0.1</version>
+        <authors>Licshee</authors>
+        <projectUrl>https://github.com/OmniKits/DataSlot</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>You want DataSlots on any object!</description>
+        <!--<dependencies>
+            <group targetFramework="MonoAndroid">
+                <dependency id="Xamarin.Forms" />
+            </group>
+            <group targetFramework="MonoTouch">
+                <dependency id="Xamarin.Forms" />
+            </group>
+            <group targetFramework="Xamarin iOS">
+                <dependency id="Xamarin.Forms" />
+            </group>
+        </dependencies>-->
+    </metadata>
+    <files>
+        <file src="Release\NET40\DataSlot.dll" target="lib\net40\" />
+        <file src="Release\NET45\DataSlot.dll" target="lib\net45\" />
+        <file src="Release\RT81\DataSlot.dll" target="lib\win\" />
+        <file src="Release\WP81\DataSlot.dll" target="lib\wpa\" />
+        <!--<file src="Release\XF\DataSlot.dll" target="lib\portable-MonoAndroid+MonoTouch+Xamarin.iOS\" />-->
+        <file src="Release\PCL\DataSlot.dll" target="lib\portable-net4+sl5+uap+win8+wp8+wpa+dnxcore\" />
+    </files>
+</package>
