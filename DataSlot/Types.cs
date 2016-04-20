@@ -1,12 +1,8 @@
-﻿#if !PCL
+﻿#if !PCL && !XAMARIN
 using System;
 using System.Reflection;
 
-#if XAMARIN_FORMS
-using BindableObject = Xamarin.Forms.BindableObject;
-using BindableProperty = Xamarin.Forms.BindableProperty;
-using BindablePropertyKey = Xamarin.Forms.BindablePropertyKey;
-#elif NETFX_CORE
+#if NETFX_CORE
 using BindableObject = Windows.UI.Xaml.DependencyObject;
 using BindableProperty = Windows.UI.Xaml.DependencyProperty;
 #else
